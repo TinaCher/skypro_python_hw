@@ -1,4 +1,3 @@
 lst = [ '🍇', '🍑', '🍐', '🍊', '🍌', '🍎']
 l = len(lst)
-print(lst[0])
-print(lst[l-1])
+print(lst[0], lst[-1])
