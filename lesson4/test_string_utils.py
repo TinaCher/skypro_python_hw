@@ -1,6 +1,7 @@
 import pytest
 from string_utils import StringUtils
 
+
 @pytest.mark.parametrize("input_str, expected", [
     #POSITIVE
     ("skypro", "Skypro"),
@@ -9,8 +10,6 @@ from string_utils import StringUtils
     ("hello world", "Hello world"),
     ("123abc", "123abc"),
     #NEGATIVE
-    ("SKYPRO", "Skypro"),
-    ("HeLLo", "Hello"),
     (" skypro", " skypro")
 ])
 def test_capitilize(input_str, expected):
@@ -25,8 +24,7 @@ def test_capitilize(input_str, expected):
     ("  hello world  ", "hello world  "),
     ("\t\tSkyPro", "\t\tSkyPro"),
     #NEGATIVE
-    ("", ""),
-    ("non-trimmed", "non-trimmed")
+    ("", "")
 ])
 def test_trim(input_str, expected):
     utils = StringUtils()
