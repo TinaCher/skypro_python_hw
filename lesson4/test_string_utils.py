@@ -6,12 +6,13 @@ from string_utils import StringUtils
     #POSITIVE
     ("skypro", "Skypro"),
     ("SkyPro", "Skypro"),
-    ("", ""),
     ("hello world", "Hello world"),
     ("123abc", "123abc"),
     #NEGATIVE
-    (" skypro", " skypro")
+    (" skypro", " skypro"),
+    ("", "")
 ])
+
 def test_capitilize(input_str, expected):
     utils = StringUtils()
     assert utils.capitilize(input_str) == expected
@@ -26,6 +27,7 @@ def test_capitilize(input_str, expected):
     #NEGATIVE
     ("", "")
 ])
+
 def test_trim(input_str, expected):
     utils = StringUtils()
     assert utils.trim(input_str) == expected
@@ -34,14 +36,15 @@ def test_trim(input_str, expected):
     #POSITIVE
    ("a,b,c,d", ",", ["a", "b", "c", "d"]),
     ("1:2:3", ":", ["1", "2", "3"]),
-    ("", ",", []),
     ("x;y;z", ";", ["x", "y", "z"]),
     ("apple|orange|banana", "|", ["apple", "orange", "banana"]),
     #NEGATIVE
     ("no delimiters", ",", ["no delimiters"]),
     ("one,two", " ", ["one,two"]),
-    ("|edge|case|", "|", ["", "edge", "case", ""])
+    ("|edge|case|", "|", ["", "edge", "case", ""]),
+    ("", ",", [])
 ])
+
 def test_to_list(input_str, delimiter, expected):
     utils = StringUtils()
     assert utils.to_list(input_str, delimiter) == expected
@@ -50,14 +53,14 @@ def test_to_list(input_str, delimiter, expected):
     #POSITIVE
      ("SkyPro", "S", True),
     ("SkyPro", "U", False),
-    ("", "S", False),
     ("hello", "h", True),
     ("testing", "t", True),
     #NEGATIVE
-    ("SkyPro", "k", False),
     ("Python", "z", False),
-    (" ", " ", True)
+    (" ", " ", True),
+    ("", "S", False)
 ])
+
 def test_contains(input_str, symbol, expected):
     utils = StringUtils()
     assert utils.contains(input_str, symbol) == expected
@@ -74,6 +77,7 @@ def test_contains(input_str, symbol, expected):
     ("test", "test", ""),
     ("", "k", "")
 ])
+
 def test_delete_symbol(input_str, symbol, expected):
     utils = StringUtils()
     assert utils.delete_symbol(input_str, symbol) == expected
@@ -88,6 +92,7 @@ def test_delete_symbol(input_str, symbol, expected):
     (" ", " ", True),
     ("", "S", False)
 ])
+
 def test_starts_with(input_str, symbol, expected):
     utils = StringUtils()
     assert utils.starts_with(input_str, symbol) == expected
@@ -99,6 +104,7 @@ def test_starts_with(input_str, symbol, expected):
     #NEGATIVE
     ("", "o", False)
 ])
+
 def test_end_with(input_str, symbol, expected):
     utils = StringUtils()
     assert utils.end_with(input_str, symbol) == expected
@@ -112,6 +118,7 @@ def test_end_with(input_str, symbol, expected):
     ("  content  ", False),
     ("\t", True),
 ])
+
 def test_is_empty(input_str, expected):
     utils = StringUtils()
     assert utils.is_empty(input_str) == expected
@@ -126,6 +133,7 @@ def test_is_empty(input_str, expected):
     ([1, 2, 3], None, "1, 2, 3"),
      (["a", "b"], "", "ab")
 ])
+
 def test_list_to_string(lst, joiner, expected):
     utils = StringUtils()
     assert utils.list_to_string(lst, joiner) == expected
