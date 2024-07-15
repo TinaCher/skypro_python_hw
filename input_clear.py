@@ -8,8 +8,8 @@ from selenium.webdriver.common.keys import Keys
 driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
 
 driver.get("http://the-internet.herokuapp.com/inputs")
-input=driver.find_element(By.CSS_SELECTOR, "[type='number']")
-input.send_keys("1000")
+input_field=driver.find_element(By.CSS_SELECTOR, "[type='number']")
+input_field.send_keys("1000")
 sleep(2)
 input.clear()
 input.send_keys("999")

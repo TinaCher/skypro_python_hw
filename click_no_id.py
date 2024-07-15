@@ -13,4 +13,8 @@ button_locator = "[class='btn btn-primary']"
 click_button = driver.find_element(By.CSS_SELECTOR, button_locator)
 click_button.send_keys(Keys.RETURN)
 
+for i in range(3):
+    driver.find_element(By.CSS_SELECTOR, "[class='btn btn-primary']").click()
+    print(f"Клик по кнопке {i+1}/3")
+
 sleep(10)

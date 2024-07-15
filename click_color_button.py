@@ -17,4 +17,5 @@ button_locator = "[class='btn class2 btn-primary btn-test']"
 click_button = driver.find_element(By.CSS_SELECTOR, button_locator)
 click_button.send_keys(Keys.RETURN)
 
+
 sleep(10)

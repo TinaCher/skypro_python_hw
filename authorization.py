@@ -18,7 +18,7 @@ username=driver.find_element(By.CSS_SELECTOR, "input#username")
 username.send_keys("tomsmith")
 username=driver.find_element(By.CSS_SELECTOR, "input#password")
 username.send_keys("SuperSecretPassword!")
-login_click=driver.find_element(By.CSS_SELECTOR, "[class='fa fa-2x fa-sign-in']")
+login_click=driver.find_element(By.CSS_SELECTOR, "[type='submit']")
 login_click.click()
-#class="fa fa-2x fa-sign-in"
+
 sleep(10)
