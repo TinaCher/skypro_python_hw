@@ -17,4 +17,4 @@ blue_button = driver.find_element(
     "xpath", "//button[contains(concat(' ', normalize-space(@class), ' '), ' btn-primary ')]")
 blue_button.click()
 
-sleep(3)
+sleep(10)
