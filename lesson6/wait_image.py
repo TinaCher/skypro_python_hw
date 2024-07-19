@@ -22,5 +22,4 @@ src_value = third_image.get_attribute("src")
 
 print(src_value)
 
-sleep(3)
 driver.quit()

@@ -23,6 +23,4 @@ waiter.until(
 update_button = driver.find_element(By.CSS_SELECTOR, "#updatingButton")
 update_button.click()
 
-sleep(10)
-
 driver.quit()
