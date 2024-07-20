@@ -21,7 +21,7 @@ def test_sauce_demo_cart_total():
         login_button = driver.find_element(By.CSS_SELECTOR, "#login-button")
         login_button.click()
 
-        sleep(1)  # Small delay to allow page to load
+        sleep(1) 
 
         driver.find_element(By.CSS_SELECTOR, "#add-to-cart-sauce-labs-backpack").click()
         driver.find_element(By.CSS_SELECTOR, "#add-to-cart-sauce-labs-bolt-t-shirt").click()
@@ -30,12 +30,11 @@ def test_sauce_demo_cart_total():
         cart = driver.find_element(By.CSS_SELECTOR, "a.shopping_cart_link[data-test='shopping-cart-link']")
         cart.click()
         
-        sleep(1)  # Small delay to allow page to load
-
+        sleep(1)  
         checkout = driver.find_element(By.CSS_SELECTOR, "#checkout")
         checkout.click()
 
-        sleep(1)  # Small delay to allow page to load
+        sleep(1) 
 
         first_name = driver.find_element(By.CSS_SELECTOR, "#first-name")
         first_name.send_keys("Tina")
@@ -49,7 +48,7 @@ def test_sauce_demo_cart_total():
         click_cont = driver.find_element(By.CSS_SELECTOR, "#continue")
         click_cont.click()
 
-        sleep(1)  # Small delay to allow page to load
+        sleep(1)  
 
         subtotal_element = driver.find_element(By.CSS_SELECTOR, ".summary_subtotal_label[data-test='subtotal-label']")
         subtotal_text = subtotal_element.text
@@ -60,6 +59,3 @@ def test_sauce_demo_cart_total():
     finally:
         sleep(3)
         driver.quit()
-
-if __name__ == "__main__":
-    pytest.main()

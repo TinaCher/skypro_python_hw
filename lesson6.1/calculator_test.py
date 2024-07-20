@@ -31,7 +31,6 @@ def test_slow_calculator():
 
         waiter.until(EC.text_to_be_present_in_element((By.CSS_SELECTOR, "div.screen"), "15"))
 
-        # Sleep to allow visual confirmation if needed
         sleep(3)
 
     finally:
