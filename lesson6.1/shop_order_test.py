@@ -7,7 +7,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 
 def test_sauce_demo_cart_total():
-    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+    driver = webdriver.Chrome()
     
     try:
         driver.get("https://www.saucedemo.com/")
@@ -50,7 +50,7 @@ def test_sauce_demo_cart_total():
 
         sleep(1)  
 
-        subtotal_element = driver.find_element(By.CSS_SELECTOR, ".summary_subtotal_label[data-test='subtotal-label']")
+        subtotal_element = driver.find_element(By.CSS_SELECTOR, ".summary_total_label")
         subtotal_text = subtotal_element.text
         subtotal_value = float(re.search(r"\$([0-9]+\.[0-9]{2})", subtotal_text).group(1))
 

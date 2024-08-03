@@ -6,8 +6,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
 def test_form_submission():
-    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
-    
+    driver = webdriver.Chrome()
     try:
         driver.get("https://bonigarcia.dev/selenium-webdriver-java/data-types.html")
 
@@ -50,19 +49,12 @@ def test_form_submission():
         zip_code_color = zip_code_alert.value_of_css_property('color')
         expected_zip_code_color = 'rgba(132, 32, 41, 1)' 
         assert zip_code_color == expected_zip_code_color
-    finally:
         
-        driver.quit()
+        fields_to_check = [
+        "#first-name", "#last-name", "#address", "#city", "#country", "#e-mail", "#phone", "#job-position", "#company"]
 
+        for field in fields_to_check:
+            assert "success" in driver.find_element(By.CSS_SELECTOR, field).get_attribute("class")
 
-#I couldn't finalize this way of code - could you advise here, please?
-#fields_to_check = [
-   # first_name, last_name, address, city, country, email, phone, job_position, company]
-
-#expected_field_color = 'rgba(15, 81, 50, 1)'  # color #0f5132 in rgba
-
-#for field in fields_to_check:
-   # field_success=field.find_elements(By.CSS_SELECTOR,".alert-success")
-    #field_color = field_success.value_of_css_property('color')
-    #assert field_color == expected_field_color
- 
+    finally:
+        driver.quit
