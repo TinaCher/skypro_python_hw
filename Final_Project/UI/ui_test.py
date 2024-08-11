@@ -20,7 +20,6 @@ def test_search_eng():
     page.search("python")
     page.submit()
 
-
 def test_no_result_msg():
     browser = webdriver.Chrome()
     browser.maximize_window()
