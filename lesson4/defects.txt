@@ -1,0 +1,8 @@
+1. FAILED lesson4/test_string_utils.py::test_is_empty[\t-True] - AssertionError: assert False == True
+The test expected the result to be True, but the function returned False. 
+This indicates an issue with how the is_empty method handles tab characters (\t).
+
+
+2. FAILED lesson4/test_string_utils.py::test_list_to_string[lst4-None-1, 2, 3] - TypeError: can only concatenate str (not "NoneType") to str
+This error indicates that the joiner parameter passed to the list_to_string method is None,
+which is causing the concatenation error.

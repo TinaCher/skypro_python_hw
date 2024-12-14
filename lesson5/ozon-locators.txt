@@ -1,0 +1,5 @@
+Локатор кнопки Войти - "div.jc2a_47" or "[data-widget='profileMenuAnonymous']"
+Локатор кнопки Заказы - "[data-widget='orderInfo']"
+Локатор ссылки OZON Job (в футере) - "[class='a6 d2e_9']" - I can't see another option - href is used twice, "[alt='Ozon Job']" - for the image
+Локатор выбора валюты (верхний левый угол страницы) - не отображается этот элемент на странице
+Локатор выпадашки Везде (в поисковой строке) - "span.a1ad_32" or "[title='Везде']"
